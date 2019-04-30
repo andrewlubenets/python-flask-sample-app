@@ -8,7 +8,7 @@ steps:
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}-${{CF_SHORT_REVISION}}'
     dockerfile: Dockerfile
   DeployMyChart:
-    image: 'codefresh/cfstep-helm:2.9.1'
+    image: '${{MyAppDockerImage}}'
     title: Deploying Helm chart
     environment:
       - CHART_REF=charts/python
